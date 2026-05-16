@@ -2,6 +2,10 @@
 
 Paste Pal is a lightweight React + Vite application for creating, editing, viewing, searching, copying, sharing, and deleting text snippets. It stores paste data in browser localStorage, so you can manage your own notes and snippets without a backend.
 
+## Live Demo
+
+- https://paste-pal-phi.vercel.app/
+
 ## Features
 
 - Create and save new text snippets with titles
