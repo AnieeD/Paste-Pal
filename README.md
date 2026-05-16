@@ -1,16 +1,62 @@
-# React + Vite
+# Paste Pal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Paste Pal is a lightweight React + Vite application for creating, editing, viewing, searching, copying, sharing, and deleting text snippets. It stores paste data in browser localStorage, so you can manage your own notes and snippets without a backend.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Create and save new text snippets with titles
+- Edit existing pastes directly from the home screen
+- Search saved pastes by title
+- View each paste on its own details page
+- Copy paste content to clipboard
+- Share paste content using the Web Share API or clipboard fallback
+- Delete pastes and keep the list synced in localStorage
 
-## React Compiler
+## Tech stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 19
+- Vite
+- Redux Toolkit
+- React Router DOM
+- Tailwind CSS
+- react-hot-toast
 
-## Expanding the ESLint configuration
+## Project structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- `src/App.jsx` — app routes and navigation
+- `src/components/Home.jsx` — create/update paste form
+- `src/components/Paste.jsx` — paste list, search, and actions
+- `src/components/ViewPaste.jsx` — read-only paste detail view
+- `src/redux/pasteSlice.js` — paste state, localStorage persistence, and toast notifications
+
+## Getting started
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Build for production:
+
+```bash
+npm run build
+```
+
+Preview the production build:
+
+```bash
+npm run preview
+```
+
+## Notes
+
+- Pastes are saved in the browser's `localStorage` under the key `pastes`
+- The app uses client-side routing with `/` for home and `/pastes` for the paste list
+- Individual paste details are available at `/pastes/:id`
